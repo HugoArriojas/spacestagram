@@ -1,0 +1,72 @@
+/* Banner at the bottom of page */
+.creditSocials {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #E9C46A;
+  }
+  
+  a {
+    color:#264653;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  a:visited {
+    color: #264653;
+    text-decoration: none;
+  }
+  a:hover ,
+  a:focus {
+    color: #EE7766;
+  }
+  
+  .socials a{
+    margin: 0 2%;
+  }
+  
+  .initials {
+    height: 14px;
+  }
+  
+  
+  @media screen and (max-width: 768px)  {
+    .catButton {
+      padding: 20% 5%;
+    }
+    
+    
+    .expandedTitle {
+      font-size: 18px;
+      margin: 0 0 1% 0;
+    }
+    
+    .shopCart,
+    .expandedItem {
+      width: 90vw;
+      left: 5vw;
+    }
+  
+    .cartItem {
+      padding: 0;
+    }
+  
+    .cartRemove {
+      height: 100px;
+    }
+    
+  }
+
+/* Media queries added here as it's the last component on the page */
+
+@media screen and (max-width: 480px)  {
+    .cartItem {
+      font-size: 14px;
+      padding: 0;
+    }
+  
+  
+  }
+  
+
