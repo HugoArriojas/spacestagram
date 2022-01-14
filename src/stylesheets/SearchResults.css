@@ -1,4 +1,4 @@
-
+/* 
 /* Product area */
 /* Look inside ShowProduct.js for product divs */
 .productContainers {
@@ -8,7 +8,10 @@
     flex-wrap: wrap;
   }
   
-  
+  .itemContainer, p {
+    color: #264653;
+  }
+
   .itemContainer {
     max-width: 20%;
     min-width: 200px;
@@ -17,15 +20,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: #264653 2px solid;
+    border: #264653 3px solid;
     margin: 1%;
     cursor: pointer;
     position: relative;
   }
-  
+
   .itemContainer:focus,
   .itemContainer:hover {
-    border: #F4A261 2px solid;
+    border: #FFFFFF 3px solid;
   }
   
   .itemImage {
@@ -69,4 +72,4 @@
   .clickedLikeButton {
     background-color: #F4A261;
     color: red;
-  }
+  } 

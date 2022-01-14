@@ -17,7 +17,9 @@ function SearchResults(props) {
     const [itemDate, setItemDate] = useState("")
 
 
-    const toggleLike = () => {
+    const toggleLike = (e) => {
+        // Allows like button to be clicked without opening description
+        e.stopPropagation();
         setLiked(!liked);
     }
 
@@ -25,9 +27,9 @@ function SearchResults(props) {
     const toggleShowDesc = (item) => {
         setDescOpen(!descOpen);
         if (descOpen === false) {
-            setItemImg(item.url)
-            setItemTitle(item.title)
-            setItemDate(item.date)
+            setItemImg(item.currentTarget.firstChild.firstChild.currentSrc)
+            setItemTitle(item.currentTarget.firstChild.firstChild.attributes.alt.value)
+            setItemDate(item.currentTarget.childNodes[1].childNodes[0].firstChild.nodeValue)
         }
     }
 
@@ -58,19 +60,14 @@ function SearchResults(props) {
                 key={props.key}
                 // Making the containers tabbable for accessibility
                 tabIndex={0}
+                onClick={toggleShowDesc}
+                // Making it so that the results containers can be selected using the enter key
+                onKeyUp={(e) => { if (e.key === 'Enter') toggleShowDesc(e) }}
             >
-                <div className="itemImage"
-                    onClick={toggleShowDesc}
-                    // Making it so that the results containers can be selected using the enter key
-                    onKeyUp={(e) => { if (e.key === 'Enter') toggleShowDesc(e) }}
-                >
+                <div className="itemImage">
                     <img src={props.image} alt={props.title} />
                 </div>
-                <div className="itemText"
-                    onClick={toggleShowDesc}
-                    // Making it so that the results containers can be selected using the enter key
-                    onKeyUp={(e) => { if (e.key === 'Enter') toggleShowDesc(e) }}
-                >
+                <div className="itemText">
                     <p className="itemTitle">{props.date}</p>
                     <p className="itemTitle">{props.title}</p>
                 </div>

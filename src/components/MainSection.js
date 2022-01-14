@@ -1,5 +1,4 @@
 // Component to render the items on the page
-import "../stylesheets/ResultsSection.css"
 import axios from "axios";
 import {useState, useEffect } from 'react';
 import SearchResults from "./SearchResults";
