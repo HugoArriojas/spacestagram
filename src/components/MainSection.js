@@ -4,11 +4,10 @@ import axios from "axios";
 import {useState, useEffect } from 'react';
 import SearchResults from "./SearchResults";
 
-function ResultsSection(props) {
+function MainSection(props) {
 
     const [results, setResults] = useState([])
-    const [loading, setLoading] = useState(false);
-    const [count, setCount] = useState(10)
+    // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         // Calling the API using Axios
@@ -18,7 +17,7 @@ function ResultsSection(props) {
         responseType: "json",
         params: {
             api_key: "f4vLk18GqZIKNkMJIeF3gtqJeT6j9mtiBsSWjih6",
-            count: `${count}`
+            count: `${props.count}`
         }
         })
         .then((response) => {
@@ -26,15 +25,15 @@ function ResultsSection(props) {
             setResults(response.data)
             console.log(response.data)
             // Once API call is received, change useState as "loaded"
-            setLoading(true);
+            props.handleLoading();
         })
-        // We want API call to be made with every category change
-    }, [])
+        // We want API call to be made with every count change
+    }, [props.count])
 
     return (
         <section className="productContainers">
         {/* Ternary conditional checks if the API has received a response */}
-        {loading ? 
+        {props.loading ? 
         (
           results.map((results) => {
             return (
@@ -65,7 +64,7 @@ function ResultsSection(props) {
     )
 }
 
-export default ResultsSection;
+export default MainSection;
 
 
 

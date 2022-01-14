@@ -13,13 +13,11 @@ function ExtraDetails(props) {
             <div className="blocker" onClick={props.handleClose}></div>
             <div className="expandedItem">
                 <button className="closeButton" onClick={props.handleClose} aria-label="closePopupWindow">X</button>
-                <div className="expandedImgInfo">
                     <div className="expandedImage">
                         <img src={props.image}
                             alt={props.title}
                         />
                     </div>
-                </div>
                 <div className="expandedInfo expandedDesc">
                     <div className="itemInfoWrapper">
                         <p className="itemRating">{props.date}</p>

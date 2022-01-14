@@ -21,6 +21,7 @@
   border-radius: 18px;
   max-width: 1500px;
   max-height: 90vh;
+  height: 95vh;
   overflow: scroll;
   overflow-x: hidden;
   /* hiding scrollbar but keeping functionality */
@@ -34,9 +35,6 @@
     display: none;
 }
 
-.expandedItem {
-  overflow: hidden;
-}
 
 .closeButton{
   position: absolute;
@@ -61,15 +59,12 @@
 }
 
 .expandedImage {
-  height: 100%;
-  width: 80%;
-  background-color: #FFFFFF;
-  border-radius: 0 0 20px 0;
-  padding: 2%;
+  height: 50%;
+  width: 100%;
 }
 
 .expandedImage img{
-  max-height: 500px;
+  max-height: 100%;
   width: 100%;
   object-fit: contain;
 }
@@ -79,7 +74,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 3%;
+  padding:  0 2% 3% 2%;
   margin: 0 auto;
 }
 

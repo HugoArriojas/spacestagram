@@ -1,16 +1,44 @@
-import './App.css';
+import './stylesheets/App.css';
 import CreditSocials from './components/CreditSocials';
+import HeaderFooter from './components/HeaderFooter';
+import MainSection from './components/MainSection';
+import SideNav from './components/SideNav';
 
-import ResultsSection from './components/ResultsSection';
+import {useState} from 'react';
 
 function App() {
 
+  const [count, setCount] = useState(10)
+  const [loading, setLoading] = useState(false);
 
+  const handleCount = (e) => {
+    setCount(e)
+  }
+
+  const handleLoading = () => {
+    setLoading(!loading)
+  }
 
   return (
     <div className="App">
-      <ResultsSection/>
-      <CreditSocials/>
+      <header>
+        <HeaderFooter />
+      </header>
+      <main>
+        <SideNav 
+          handleCount = {handleCount}
+          handleLoading = {handleLoading}
+          />
+        <MainSection 
+          count = {count}
+          loading = {loading}
+          handleLoading = {handleLoading}
+        />
+      </main>
+      <footer>
+        <HeaderFooter />
+        <CreditSocials />
+      </footer>
     </div>
   );
 }
