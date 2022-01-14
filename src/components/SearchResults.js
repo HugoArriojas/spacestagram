@@ -15,8 +15,10 @@ function SearchResults(props) {
     const [itemImg, setItemImg] = useState("")
     // holds the selected item title
     const [itemTitle, setItemTitle] = useState("")
-    // holds the selected item price
+    // holds the selected item date
     const [itemDate, setItemDate] = useState("")
+    // holds the selected item description
+    const [itemDesc, setItemDesc] = useState("")
 
 
     const toggleLike = (e) => {
@@ -32,6 +34,7 @@ function SearchResults(props) {
             setItemImg(item.currentTarget.firstChild.firstChild.currentSrc)
             setItemTitle(item.currentTarget.firstChild.firstChild.attributes.alt.value)
             setItemDate(item.currentTarget.childNodes[1].childNodes[0].firstChild.nodeValue)
+            setItemDesc(item.currentTarget.childNodes[1].childNodes[2].firstChild.nodeValue)
         }
     }
 
@@ -46,7 +49,8 @@ function SearchResults(props) {
         let favouritesItem = {
             title: itemTitle,
             image: itemImg,
-            date: itemDate
+            date: itemDate,
+            desc: itemDesc
         }
         // push the value of the `selected item` state to the database
         push(dbRef, favouritesItem);
@@ -70,6 +74,7 @@ function SearchResults(props) {
                 <div className="itemText">
                     <p className="itemTitle">{props.date}</p>
                     <p className="itemTitle">{props.title}</p>
+                    <p className="descNull">{props.description}</p>
                 </div>
                 <button className={liked ? "clickedLikeButton":"likeButton"} onClick={toggleLike}>{liked? "Liked!" : "♥ LIKE"}</button>
             </div>

@@ -2,10 +2,6 @@ import "../stylesheets/ExtraDetails.css"
 
 function ExtraDetails(props) {
 
-    const addedToFavourites = () => {
-        props.handleAddToFavourites()
-        props.handleClose()
-    }
 
     return (
         <>
@@ -22,16 +18,10 @@ function ExtraDetails(props) {
                     <div className="itemInfoWrapper">
                         <p className="itemDate">{props.date}</p>
                         <h3 className="expandedTitle">{props.title}</h3>
-                        <p className="itemDesc">{props.description}</p>
+                        <p className="itemDesc">{props.desc}</p>
                         {/* <p className="copyright">
                         `Copyright holder: {props.copyright}`
                         </p> */}
-                        <button
-                            className="addToFavourites"
-                            onClick={addedToFavourites}
-                        >
-                            Add to Favourites
-                        </button>
                     </div>
                 </div>
             </div>

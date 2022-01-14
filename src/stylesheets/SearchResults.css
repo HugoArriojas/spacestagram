@@ -31,6 +31,20 @@
     border: #FFFFFF 3px solid;
   }
   
+    .clickedLikeButton,
+    .likeButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      padding: 15px;
+    }
+  
+    .clickedLikeButton {
+      background-color: #F4A261;
+      color: red;
+    } 
+  
   .itemImage {
     height: 100%;
     max-height: 100%;
@@ -60,16 +74,6 @@
     margin-top: 5%;
   }
 
-  .clickedLikeButton,
-  .likeButton {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    padding: 15px;
+  .descNull {
+    display: none;
   }
-
-  .clickedLikeButton {
-    background-color: #F4A261;
-    color: red;
-  } 

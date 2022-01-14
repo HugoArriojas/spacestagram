@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDatabase, ref, onValue, remove } from "firebase/database";
 import firebase from "./firebase";
 import "../stylesheets/Favourites.css"
+import FavsDetails from "./FavsDetails";
 
 function Favourites(props) {
     // Holds the description open state
@@ -10,7 +11,12 @@ function Favourites(props) {
     const [items, setItems] = useState([]);
     // holds the number of items in the favourites
     const [favouritesNumber, setFavouritesNumber] = useState(0);
-    
+
+    const [favDescOpen, setFavDescOpen] = useState(false);
+    const [favTitle, setFavTitle] = useState("");
+    const [favDate, setFavDate] = useState("");
+    const [favDesc, setFavDesc] = useState("");
+    const [favImage, setFavImage] = useState("");
 
     useEffect(() => {
         setFavouritesNumber(items.length);
@@ -56,6 +62,12 @@ function Favourites(props) {
         remove(dbRef)
     }
 
+    const toggleShowDesc = () => {
+        setFavDescOpen(!favDescOpen);
+        // setFavImage(item.currentTarget.children[0].firstChild.src)
+        // setFavTitle(item.currentTarget.children[1].children[0].innerText)
+        // setFavDesc(item.currentTarget.children[1].children[1].innerText)
+    }
 
     return (
         <>
@@ -70,19 +82,45 @@ function Favourites(props) {
                                 ? <h2 className="yourFavourites emptyFavourites"> Your list is empty!</h2>
                                 : items.map((item) => {
                                     return (
-                                        <li key={item.key} className="favouritesItem">
-                                            <div className="favouritesImage">
-                                                <img src={item.name.image} alt={item.name.title} />
-                                            </div>
-                                            <div className="favouritesInfo">
-                                                <p className="favouritesTitle">{item.name.title}</p>
-                                            </div>
-                                            <button className="favouritesRemove" onClick={() => handleRemoveItem(item.key)}> Remove </button>
-                                        </li>
+                                        <>
+                                            <li key={item.key}
+                                                className="favouritesItem"
+                                                // Making the containers tabbable for accessibility
+                                                tabIndex={0}
+                                                onClick={toggleShowDesc}
+                                                // Making it so that the results containers can be selected using the enter key
+                                                onKeyUp={(e) => { if (e.key === 'Enter') toggleShowDesc(e) }}
+                                            >
+                                                <div className="favouritesImage">
+                                                    <img src={item.name.image} alt={item.name.title} />
+                                                </div>
+                                                <div className="favouritesInfo">
+                                                    <p className="favouritesTitle">{item.name.title}</p>
+                                                    <p className="favouritesDate">{item.name.date}</p>
+                                                </div>
+                                                <button className="favouritesRemove" onClick={() => handleRemoveItem(item.key)}> Remove </button>
+                                                {/* if descOpen is true, show the expanded info */}
+                                            </li>
+
+                                            {favDescOpen ?
+                                                <FavsDetails
+                                                    image={item.name.image}
+                                                    // image={favImage}
+                                                    title={item.name.title}
+                                                    // title={favTitle}
+                                                    description={item.name.desc}
+                                                    date={item.name.date}
+                                                    // date={favDate}
+                                                    handleClose={toggleShowDesc}
+                                                />
+                                                : null // basically show nothing if it isn't clicked
+                                            }
+                                        </>
                                     )
                                 })}
                         </ul>
                     </div>
+
                 </>
                 :
                 <div className="closedFavourites"
@@ -90,11 +128,11 @@ function Favourites(props) {
                 >
                     {/* <i className="fas fa-shopping-cart cart"></i> */}
                     <p className="favouritesHeart">♥</p>
-                    {items.length > 0 
-                    ? <div className="favouritesNumberBubble">
-                        <p className="favouritesNumber">{favouritesNumber}</p>
-                    </div>
-                    : null
+                    {items.length > 0
+                        ? <div className="favouritesNumberBubble">
+                            <p className="favouritesNumber">{favouritesNumber}</p>
+                        </div>
+                        : null
                     }
                     <div
                         className="favouritesTriangle"
@@ -105,7 +143,7 @@ function Favourites(props) {
             }
         </>
     )
-    
+
 }
 
 export default Favourites
