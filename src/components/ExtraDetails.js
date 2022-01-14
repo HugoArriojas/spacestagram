@@ -2,8 +2,8 @@ import "../stylesheets/ExtraDetails.css"
 
 function ExtraDetails(props) {
 
-    const addedToCart = () => {
-        props.handleAddToCart()
+    const addedToFavourites = () => {
+        props.handleAddToFavourites()
         props.handleClose()
     }
 
@@ -13,11 +13,11 @@ function ExtraDetails(props) {
             <div className="blocker" onClick={props.handleClose}></div>
             <div className="expandedItem">
                 <button className="closeButton" onClick={props.handleClose} aria-label="closePopupWindow">X</button>
-                    <div className="expandedImage">
-                        <img src={props.image}
-                            alt={props.title}
-                        />
-                    </div>
+                <div className="expandedImage">
+                    <img src={props.image}
+                        alt={props.title}
+                    />
+                </div>
                 <div className="expandedInfo expandedDesc">
                     <div className="itemInfoWrapper">
                         <p className="itemRating">{props.date}</p>
@@ -26,6 +26,12 @@ function ExtraDetails(props) {
                         {/* <p className="copyright">
                         `Copyright holder: {props.copyright}`
                         </p> */}
+                        <button
+                            className="addToFavourites"
+                            onClick={addedToFavourites}
+                        >
+                            Add to Favourites
+                        </button>
                     </div>
                 </div>
             </div>

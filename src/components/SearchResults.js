@@ -1,6 +1,8 @@
 // Component to render the items on the page
 import ExtraDetails from "./ExtraDetails";
 import { useState } from 'react';
+import firebase from './firebase';
+import { getDatabase, ref, push} from 'firebase/database';
 import "../stylesheets/SearchResults.css"
 
 function SearchResults(props) {
@@ -35,23 +37,21 @@ function SearchResults(props) {
 
 
 
-    //  // Handle Add To Cart function
-    // const handleAddToCart = () => {
-    //     // create a reference to our database
-    //     const database = getDatabase(firebase);
-    //     const dbRef = ref(database);
+     // Handle Add To Favourites function
+    const handleAddToFavourites = () => {
+        // create a reference to our database
+        const database = getDatabase(firebase);
+        const dbRef = ref(database);
 
-    //     let cartItem = {
-    //         title: itemTitle,
-    //         image: itemImg,
-    //         price: itemPrice
-    //     }
-    //     // push the value of the `selected item` state to the database
-    //     push(dbRef, cartItem);
+        let favouritesItem = {
+            title: itemTitle,
+            image: itemImg,
+            date: itemDate
+        }
+        // push the value of the `selected item` state to the database
+        push(dbRef, favouritesItem);
 
-    //     // Each item added to the cart is added to the total
-    //     props.handleCartTotal(cartItem);
-    // }
+    }
 
 
     return (
@@ -78,7 +78,7 @@ function SearchResults(props) {
             {descOpen ?
                 <ExtraDetails
                     handleClose={toggleShowDesc}
-                    // handleAddToCart={handleAddToCart}
+                    handleAddToFavourites={handleAddToFavourites}
                     image={props.hdImage}
                     title={props.title}
                     copyright={props.copyright}

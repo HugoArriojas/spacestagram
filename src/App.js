@@ -3,6 +3,7 @@ import CreditSocials from './components/CreditSocials';
 import HeaderFooter from './components/HeaderFooter';
 import MainSection from './components/MainSection';
 import SideNav from './components/SideNav';
+import Favourites from './components/Favourites';
 
 import {useState} from 'react';
 
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <header>
         <HeaderFooter />
+        <Favourites/>
       </header>
       <main>
         <SideNav 

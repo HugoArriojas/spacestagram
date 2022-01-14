@@ -9,7 +9,7 @@
     background: rgba(0,0,0,.5);
 }
 
-.shopCart,
+.favourites,
 .expandedItem {
   position: fixed;
   z-index: 4;
@@ -30,7 +30,7 @@
 }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
-  .shopCart:-webkit-scrollbar,
+  .favourites:-webkit-scrollbar,
   .expandedItem:-webkit-scrollbar {
     display: none;
 }
