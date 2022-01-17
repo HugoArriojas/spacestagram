@@ -12,11 +12,12 @@ function Favourites(props) {
     // holds the number of items in the favourites
     const [favouritesNumber, setFavouritesNumber] = useState(0);
 
-    const [favDescOpen, setFavDescOpen] = useState(false);
-    const [favTitle, setFavTitle] = useState("");
-    const [favDate, setFavDate] = useState("");
+    const [favDetailsOpen, setfavDetailsOpen] = useState(false);
+
     const [favDesc, setFavDesc] = useState("");
     const [favImage, setFavImage] = useState("");
+    const [favTitle, setFavTitle] = useState("");
+    const [favDate, setFavDate] = useState("");
 
     useEffect(() => {
         setFavouritesNumber(items.length);
@@ -50,8 +51,11 @@ function Favourites(props) {
         })
     }, [])
 
+
+  
     // this function takes an argument, which is the ID of the item we want to remove
     const handleRemoveItem = (itemId) => {
+        itemId.stopPropagation()
         // here we create a reference to the database 
         // this time though, instead of pointing at the whole database, we make our dbRef point to the specific node of the item we want to remove
         const database = getDatabase(firebase);
@@ -62,11 +66,16 @@ function Favourites(props) {
         remove(dbRef)
     }
 
-    const toggleShowDesc = () => {
-        setFavDescOpen(!favDescOpen);
-        // setFavImage(item.currentTarget.children[0].firstChild.src)
-        // setFavTitle(item.currentTarget.children[1].children[0].innerText)
-        // setFavDesc(item.currentTarget.children[1].children[1].innerText)
+    const toggleShowDesc = (e) => {
+        setFavImage(e.currentTarget.children[0].firstChild.src)
+        setFavTitle(e.currentTarget.children[1].children[0].innerText)
+        setFavDate(e.currentTarget.children[1].children[1].innerText)
+        // setFavDesc(e.currentTarget.children[1].children[1].innerText)
+        setfavDetailsOpen(!favDetailsOpen);
+    }
+
+    const toggleFavClose = (e) => {
+        setfavDetailsOpen(!favDetailsOpen);
     }
 
     return (
@@ -97,21 +106,24 @@ function Favourites(props) {
                                                 <div className="favouritesInfo">
                                                     <p className="favouritesTitle">{item.name.title}</p>
                                                     <p className="favouritesDate">{item.name.date}</p>
+
                                                 </div>
-                                                <button className="favouritesRemove" onClick={() => handleRemoveItem(item.key)}> Remove </button>
+                                                <button
+                                                    className="favouritesRemove"
+                                                    onClick={() => handleRemoveItem(item.key)}
+                                                >
+                                                    Remove
+                                                </button>
                                                 {/* if descOpen is true, show the expanded info */}
                                             </li>
 
-                                            {favDescOpen ?
+                                            {favDetailsOpen ?
                                                 <FavsDetails
-                                                    image={item.name.image}
-                                                    // image={favImage}
-                                                    title={item.name.title}
-                                                    // title={favTitle}
-                                                    description={item.name.desc}
-                                                    date={item.name.date}
-                                                    // date={favDate}
-                                                    handleClose={toggleShowDesc}
+                                                    image={favImage}
+                                                    title={favTitle}
+                                                    desc={favDesc}
+                                                    date={favDate}
+                                                    handleClose={toggleFavClose}
                                                 />
                                                 : null // basically show nothing if it isn't clicked
                                             }

@@ -23,9 +23,6 @@ function ExtraDetails(props) {
                         <p className="itemDate">{props.date}</p>
                         <h3 className="expandedTitle">{props.title}</h3>
                         <p className="itemDesc">{props.description}</p>
-                        {/* <p className="copyright">
-                        `Copyright holder: {props.copyright}`
-                        </p> */}
                         <button
                             className="addToFavourites"
                             onClick={addedToFavourites}

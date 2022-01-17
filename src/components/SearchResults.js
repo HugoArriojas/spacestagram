@@ -86,7 +86,6 @@ function SearchResults(props) {
                     handleAddToFavourites={handleAddToFavourites}
                     image={props.hdImage}
                     title={props.title}
-                    copyright={props.copyright}
                     description={props.description}
                 />
                 : null // basically show nothing if it isn't clicked
