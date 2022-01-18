@@ -4,7 +4,7 @@ import firebase from "./firebase";
 import "../stylesheets/Favourites.css"
 import FavsDetails from "./FavsDetails";
 
-function Favourites(props) {
+function Favourites() {
     // Holds the description open state
     const [favouritesOpen, setFavouritesOpen] = useState(false);
     // Holds the items in the favourites
@@ -55,7 +55,6 @@ function Favourites(props) {
   
     // this function takes an argument, which is the ID of the item we want to remove
     const handleRemoveItem = (itemId) => {
-        itemId.stopPropagation()
         // here we create a reference to the database 
         // this time though, instead of pointing at the whole database, we make our dbRef point to the specific node of the item we want to remove
         const database = getDatabase(firebase);
@@ -70,7 +69,7 @@ function Favourites(props) {
         setFavImage(e.currentTarget.children[0].firstChild.src)
         setFavTitle(e.currentTarget.children[1].children[0].innerText)
         setFavDate(e.currentTarget.children[1].children[1].innerText)
-        // setFavDesc(e.currentTarget.children[1].children[1].innerText)
+        setFavDesc(e.currentTarget.children[1].children[2].innerText)
         setfavDetailsOpen(!favDetailsOpen);
     }
 
@@ -106,7 +105,7 @@ function Favourites(props) {
                                                 <div className="favouritesInfo">
                                                     <p className="favouritesTitle">{item.name.title}</p>
                                                     <p className="favouritesDate">{item.name.date}</p>
-
+                                                    <p className="descNull">{item.name.desc}</p>
                                                 </div>
                                                 <button
                                                     className="favouritesRemove"
@@ -114,9 +113,9 @@ function Favourites(props) {
                                                 >
                                                     Remove
                                                 </button>
-                                                {/* if descOpen is true, show the expanded info */}
                                             </li>
 
+                                                {/* if descOpen is true, show the expanded info */}
                                             {favDetailsOpen ?
                                                 <FavsDetails
                                                     image={favImage}
