@@ -4,22 +4,22 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: #E9C46A;
+    background-color: #FFFCF2;
   }
   
   a {
-    color:#264653;
+    color:#252422;
     font-weight: bold;
     text-decoration: none;
     border: 1px solid transparent;
   }
   a:visited {
-    color: #264653;
+    color: #252422;
     text-decoration: none;
   }
   a:hover ,
   a:focus {
-    color: #EE7766;
+    color: #EB5E28;
   }
   
   .socials a{

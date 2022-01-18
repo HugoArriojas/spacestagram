@@ -1,7 +1,7 @@
 /* Side Nav */
 .sideNav { 
-    color: #E9C46A;
-    background-color: #264653;
+    color: #FFFCF2;
+    background-color: #252422;
   }
   
   .sideNav {
@@ -40,9 +40,9 @@
     font-size: 20px;
     background-color: transparent;
     border: none;
-    color: #E9C46A;
-    border-bottom: #EE7766 2px solid;
-    border-top: #EE7766 2px solid;
+    color: #FFFCF2;
+    border-bottom: #EB5E28 2px solid;
+    border-top: #EB5E28 2px solid;
     padding: 10% 4%;
   }
   

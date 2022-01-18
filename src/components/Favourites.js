@@ -90,7 +90,7 @@ function Favourites() {
                         }
                         <ul className="favouritesList">
                             {items.length === 0
-                                ? <h2 className="yourFavourites emptyFavourites"> Your list is empty!</h2>
+                                ? <h2 className="yourFavourites emptyFavourites"> Your favourites list is empty!</h2>
                                 : items.map((item) => {
                                     return (
                                         <>

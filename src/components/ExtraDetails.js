@@ -27,7 +27,7 @@ function ExtraDetails(props) {
                             className="addToFavourites"
                             onClick={addedToFavourites}
                         >
-                            Add to Favourites
+                            Save to Favourites
                         </button>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ function SearchResults(props) {
                     <p className="itemTitle">{props.title}</p>
                     <p className="descNull">{props.description}</p>
                 </div>
-                <button className={liked ? "clickedLikeButton":"likeButton"} onClick={toggleLike}>{liked? "Liked!" : "♥ LIKE"}</button>
+                <button className={liked ? "clickedLikeButton":"likeButton"} onClick={toggleLike}>{liked? "Liked!" : "LIKE"}</button>
             </div>
 
             {/* if descOpen is true, show the expanded info */}
