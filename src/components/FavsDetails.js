@@ -8,7 +8,7 @@ function ExtraDetails(props) {
             {/* Blocker in case people don't want to x out of the window */}
             <div className="blocker" onClick={props.handleClose}></div>
             <div className="expandedItem">
-                <button className="closeButton" onClick={props.handleClose} aria-label="closePopupWindow">X</button>
+                <button className="closeButton favCloseButton" onClick={props.handleClose} aria-label="closePopupWindow">X</button>
                 <div className="expandedImage">
                     <img src={props.image}
                         alt={props.title}
@@ -19,9 +19,6 @@ function ExtraDetails(props) {
                         <p className="itemDate">{props.date}</p>
                         <h3 className="expandedTitle">{props.title}</h3>
                         <p className="itemDesc">{props.desc}</p>
-                        {/* <p className="copyright">
-                        `Copyright holder: {props.copyright}`
-                        </p> */}
                     </div>
                 </div>
             </div>

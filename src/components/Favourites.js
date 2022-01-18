@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getDatabase, ref, onValue, remove } from "firebase/database";
 import firebase from "./firebase";
-import "../stylesheets/Favourites.css"
 import FavsDetails from "./FavsDetails";
+import "../stylesheets/Favourites.css"
 
 function Favourites() {
     // Holds the description open state
@@ -51,7 +51,6 @@ function Favourites() {
         })
     }, [])
 
-
   
     // this function takes an argument, which is the ID of the item we want to remove
     const handleRemoveItem = (itemId) => {
@@ -64,16 +63,16 @@ function Favourites() {
         // using the Firebase method remove(), we remove the node specific to the item ID
         remove(dbRef)
     }
-
-    const toggleShowDesc = (e) => {
-        setFavImage(e.currentTarget.children[0].firstChild.src)
-        setFavTitle(e.currentTarget.children[1].children[0].innerText)
-        setFavDate(e.currentTarget.children[1].children[1].innerText)
-        setFavDesc(e.currentTarget.children[1].children[2].innerText)
+    const detailButton = (e) => {
+        setFavImage(e.currentTarget.parentElement.parentElement.children[0].firstChild.src)
+        setFavTitle(e.currentTarget.parentElement.children[0].innerText)
+        setFavDate(e.currentTarget.parentElement.children[1].innerText)
+        setFavDesc(e.currentTarget.parentElement.children[2].innerText)
         setfavDetailsOpen(!favDetailsOpen);
     }
 
-    const toggleFavClose = (e) => {
+
+    const toggleFavClose = () => {
         setfavDetailsOpen(!favDetailsOpen);
     }
 
@@ -84,7 +83,11 @@ function Favourites() {
                     <div className="blocker" onClick={handleFavourites}></div>
                     <div className="favourites">
                         <h2 className="yourFavourites">Here are your favourites:</h2>
+                        {/* hides absolutely positioned close button when favourites details are open */}
+                        {!favDetailsOpen ?
                         <button className="closeButton" onClick={handleFavourites} aria-label="closePopupWindow">X</button>
+                        : null
+                        }
                         <ul className="favouritesList">
                             {items.length === 0
                                 ? <h2 className="yourFavourites emptyFavourites"> Your list is empty!</h2>
@@ -93,12 +96,7 @@ function Favourites() {
                                         <>
                                             <li key={item.key}
                                                 className="favouritesItem"
-                                                // Making the containers tabbable for accessibility
-                                                tabIndex={0}
-                                                onClick={toggleShowDesc}
-                                                // Making it so that the results containers can be selected using the enter key
-                                                onKeyUp={(e) => { if (e.key === 'Enter') toggleShowDesc(e) }}
-                                            >
+                                                >
                                                 <div className="favouritesImage">
                                                     <img src={item.name.image} alt={item.name.title} />
                                                 </div>
@@ -106,6 +104,15 @@ function Favourites() {
                                                     <p className="favouritesTitle">{item.name.title}</p>
                                                     <p className="favouritesDate">{item.name.date}</p>
                                                     <p className="descNull">{item.name.desc}</p>
+                                                    <button className="favDetails" 
+                                                        onClick={detailButton}
+                                                        // Making the containers tabbable for accessibility
+                                                        tabIndex={0}
+                                                        // Making it so that the results containers can be selected using the enter key
+                                                        onKeyUp={(e) => { if (e.key === 'Enter') detailButton(e)}}
+                                                    >
+                                                        More Details
+                                                    </button>
                                                 </div>
                                                 <button
                                                     className="favouritesRemove"
