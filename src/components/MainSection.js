@@ -24,7 +24,7 @@ function MainSection(props) {
     }
     )
       .then((response) => {
-        // using useState in order to store the received product array
+        // using useState in order to store the received results array
         setResults(response.data)
         // Once API call is received, change useState as "loaded"
         // props.handleLoading(true);
@@ -34,7 +34,7 @@ function MainSection(props) {
   }, [props.count])
 
   return (
-    <section className="productContainers">
+    <section className="resultsContainers">
       <ul className="resultsList">
         {/* Ternary conditional checks if the API has received a response */}
         {loading ?
