@@ -1,3 +1,15 @@
+# Spacestagram
+
+Spacestagram was built as a part of the [Shopify Frontend Developer Intern Challenge](https://docs.google.com/document/d/13zXpyrC2yGxoLXKktxw2VJG2Jw8SdUfliLM-bYQLjqE/edit#)
+
+Built entirely in React, Spacestagram works to obtain 10 random "Astronomy Pictures of the Day" initially and display them on the page.
+From here, users can choose to change the number of results, like (and unlike) the pictures, and save them to their favourites.
+
+The Favourites are stored to Firebase, and the saved photos have their corresponding titles, dates, images, and descriptions stored for later viewing.
+
+
+*****************************************************************************************************
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
