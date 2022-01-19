@@ -10,7 +10,7 @@ function SideNav(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.handleLoading(false);
+    // props.handleLoading(false);
     if (props.count === input ) {
       props.handleCount(10);
     } else if (input <= 100 && input > 0) {
