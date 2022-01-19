@@ -26,6 +26,11 @@
     padding-top: 50px;
   }
 
+  .countForm label {
+    width: 85%;
+    margin: 0 auto;
+  }
+
   .countInput {
     width: 50%;
     margin: 20px auto;
@@ -72,7 +77,11 @@
     transform: scaleX(1)
   }
   
-  
+  .descriptionExplain {
+    width: 80%;
+    margin: 0 auto;
+  }
+
 
   @media screen and (max-height: 590px)  {
     /* Error handling: if screen is too small vertically, can still scroll through categories, loses sticky property */
