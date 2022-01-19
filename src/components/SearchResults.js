@@ -2,7 +2,7 @@
 import ExtraDetails from "./ExtraDetails";
 import { useState } from 'react';
 import firebase from './firebase';
-import { getDatabase, ref, push} from 'firebase/database';
+import { getDatabase, ref, push } from 'firebase/database';
 import "../stylesheets/SearchResults.css"
 
 function SearchResults(props) {
@@ -40,7 +40,7 @@ function SearchResults(props) {
 
 
 
-     // Handle Add To Favourites function
+    // Handle Add To Favourites function
     const handleAddToFavourites = () => {
         // create a reference to our database
         const database = getDatabase(firebase);
@@ -75,8 +75,8 @@ function SearchResults(props) {
                     <p className="itemDate">{props.date}</p>
                     <p className="itemTitle">{props.title}</p>
                     <p className="descNull">{props.description}</p>
+                    <button className={liked ? "clickedLikeButton" : "likeButton"} onClick={toggleLike}>{liked ? "Liked!" : "LIKE"}</button>
                 </div>
-                <button className={liked ? "clickedLikeButton":"likeButton"} onClick={toggleLike}>{liked? "Liked!" : "LIKE"}</button>
             </div>
 
             {/* if descOpen is true, show the expanded info */}
@@ -85,7 +85,7 @@ function SearchResults(props) {
                     handleClose={toggleShowDesc}
                     handleAddToFavourites={handleAddToFavourites}
                     image={props.hdImage}
-                    date = {props.date}
+                    date={props.date}
                     title={props.title}
                     description={props.description}
                 />

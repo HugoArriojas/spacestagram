@@ -46,7 +46,7 @@ function SideNav(props) {
             className="submit btn-slide"
           >Submit</button>
         </form>
-        <h3 className="descriptionExplain">Click on results for desciptions + save to favourites</h3>
+        <h3 className="descriptionExplain">Click on results for details + save to favourites</h3>
       </div> {/* end of sidenav Wrapper */}
     </section>
   );

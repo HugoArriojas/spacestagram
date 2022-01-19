@@ -1,10 +1,10 @@
 /* Shopping favourites section  */
 .closedFavourites {
+    color: #252422;
     position: fixed;
     top: 0%;
     right: 0%;
     z-index: 4;
-    color: #252422;
     cursor: pointer;
   }
   
@@ -21,11 +21,11 @@
   }
 
   .favouritesNumberBubble {
+    background-color: #FFFCF2;
     position: fixed;
-    z-index: 10;
     top: 2px;
     right: 45px;
-    background-color: #FFFCF2;
+    z-index: 10;
     border-radius: 50%;
   }
 
@@ -36,10 +36,10 @@
   
   
   .favouritesHeart {
+    font-size: 50px;
     position:fixed;
     right: 10px;
     top: 0px;
-    font-size: 50px;
     z-index: 10;
   }
   
@@ -58,6 +58,7 @@
   }
   
   .favouritesItem {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,23 +66,22 @@
     margin: 3% 0;
     border: 2px solid #252422;
     border-radius: 18px;
-    width: 90%;
   }
   
   
   .favouritesImage {
+    background-color: #FFFFFF;
     height: 100px;
     width: 100px;
     min-width: 100px;
-    background-color: #FFFFFF;
     padding: 2%;
     border-radius: 18px;
   }
   
   .favouritesImage img {
-    object-fit: contain;
     height: 100%;
     width: 100%;
+    object-fit: contain;
     margin: 0 auto;
   }
   
@@ -91,11 +91,11 @@
   }
   
   .favouritesBubble {
-    background-color: #252422;
-    padding: 1.5% 3%;
-    border-radius: 18px;
-    width: 85px;
     text-align: center;
+    background-color: #252422;
+    width: 85px;
+    border-radius: 18px;
+    padding: 1.5% 3%;
     margin-top: 5px;
   }
   
@@ -110,11 +110,10 @@
 
   .favDetails,
   .favouritesRemove {
-    border: none;
     padding: 3%;
+    border: #252422 1px solid;
     border-radius: 18px;
     cursor: pointer;
-    border: #252422 1px solid;
   }
 
   .favDetails:focus,

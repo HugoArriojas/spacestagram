@@ -1,16 +1,16 @@
 /* Banner at the bottom of page */
 .creditSocials {
     text-align: center;
+    background-color: #FFFCF2;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    background-color: #FFFCF2;
   }
   
   a {
-    color:#252422;
     font-weight: bold;
     text-decoration: none;
+    color:#252422;
     border: 1px solid transparent;
   }
   a:visited {

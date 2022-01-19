@@ -1,27 +1,27 @@
 /* Expanded product details */
 .blocker {
+    background: rgba(0,0,0,.5);
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 3;
-    background: rgba(0,0,0,.5);
 }
 
 .favourites,
 .expandedItem {
+  background-color: #FFDF90;
+  width: 80vw;
+  max-width: 1500px;
+  height: 95vh;
+  max-height: 90vh;
   position: fixed;
-  z-index: 4;
   left: 15%;
   bottom: 5%;
-  width: 80vw;
-  background-color: #FFDF90;
+  z-index: 4;
   border: 3px solid #252422;
   border-radius: 18px;
-  max-width: 1500px;
-  max-height: 90vh;
-  height: 95vh;
   overflow: scroll;
   overflow-x: hidden;
   /* hiding scrollbar but keeping functionality */
@@ -37,17 +37,17 @@
 
 
 .closeButton{
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 5px;
-  right: 5px;
   font-size: 20px;
-  border-radius: 50%;
   color: #EB5E28;
   background-color: #252422;
-  border: 2px solid transparent;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   z-index: 5;
+  border: 2px solid transparent;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -59,10 +59,10 @@
 }
 
 .expandedImage {
-  margin-bottom: 3%;
   width: 100%;
   height: auto;
   max-height: 100%;
+  margin-bottom: 3%;
 }
 
 .expandedImage img{
@@ -73,10 +73,10 @@
 }
 
 .expandedInfo {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding:  0 2% 3% 2%;
   margin: 0 auto;
 }
@@ -87,13 +87,13 @@
 }
 
 .addToFavourites {
-  margin: 1% auto;
-  padding: 2%;
-  border-radius: 18px;
-  cursor: pointer;
-  border: 2px solid #252422;
   color: #FFDF90;
   background-color: #252422;
+  margin: 1% auto;
+  padding: 2%;
+  border: 2px solid #252422;
+  border-radius: 18px;
+  cursor: pointer;
 }
 
 .addToFavourites:hover,
@@ -104,12 +104,12 @@
 }
 
 .expandedDate {
-  background-color: #252422;
-  border-radius: 18px;
   width: auto;
-  margin: 0 auto;
-  padding: 1%;
+  background-color: #252422;
   display: inline-block;
+  padding: 1%;
+  margin: 0 auto;
+  border-radius: 18px;
 }
 
 .expandedDay {
@@ -118,8 +118,8 @@
 }
 
 .expandedTitle {
-  color: #252422;
   font-size: 20px;
+  color: #252422;
   margin: 2% 0;
 }
 
