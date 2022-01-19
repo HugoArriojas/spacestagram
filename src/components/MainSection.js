@@ -8,8 +8,8 @@ function MainSection(props) {
     const [results, setResults] = useState([])
     // const [loading, setLoading] = useState(false);
 
-        // putting the dependency in a variable so that netlify doesn't read props as a missing dependency
-    let counts = props.count
+    // destructuring the props
+  const {count} = props;
 
     useEffect(() => {
         // Calling the API using Axios
@@ -19,7 +19,7 @@ function MainSection(props) {
         responseType: "json",
         params: {
             api_key: "f4vLk18GqZIKNkMJIeF3gtqJeT6j9mtiBsSWjih6",
-            count: counts
+            count: count
         }
         })
         .then((response) => {
@@ -29,7 +29,7 @@ function MainSection(props) {
             props.handleLoading();
         })
         // We want API call to be made with every count change
-    }, [counts])
+    }, [count])
 
     return (
         <section className="productContainers">
