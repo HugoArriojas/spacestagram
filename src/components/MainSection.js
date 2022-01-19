@@ -9,7 +9,7 @@ function MainSection(props) {
     // const [loading, setLoading] = useState(false);
 
     // destructuring the props
-  const {count} = props;
+  const {count, handleLoading} = props;
 
     useEffect(() => {
         // Calling the API using Axios
@@ -26,7 +26,7 @@ function MainSection(props) {
             // using useState in order to store the received product array
             setResults(response.data)
             // Once API call is received, change useState as "loaded"
-            props.handleLoading();
+            handleLoading();
         })
         // We want API call to be made with every count change
     }, [count])
