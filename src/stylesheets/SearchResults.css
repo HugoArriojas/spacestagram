@@ -1,12 +1,3 @@
-/* 
-/* Product area */
-.productContainers {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-  
   .itemContainer, 
   p {
     color: #252422;
@@ -91,3 +82,10 @@
   .clickedLikeButton {
     background-color: #F4A261;
   } 
+
+  @media screen and (max-width: 480px) {
+    .itemContainer {
+      width: 200px
+    }
+    
+  }

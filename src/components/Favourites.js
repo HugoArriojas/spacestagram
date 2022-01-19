@@ -58,7 +58,6 @@ function Favourites() {
         // this time though, instead of pointing at the whole database, we make our dbRef point to the specific node of the item we want to remove
         const database = getDatabase(firebase);
         const dbRef = ref(database, `/${itemId}`);
-        console.log(itemId)
 
         // using the Firebase method remove(), we remove the node specific to the item ID
         remove(dbRef)

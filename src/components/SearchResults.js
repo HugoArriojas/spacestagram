@@ -60,7 +60,7 @@ function SearchResults(props) {
 
     return (
         <>
-            <div className="itemContainer"
+            <li className="itemContainer"
                 key={props.date}
                 // Making the containers tabbable for accessibility
                 tabIndex={0}
@@ -77,7 +77,7 @@ function SearchResults(props) {
                     <p className="descNull">{props.description}</p>
                     <button className={liked ? "clickedLikeButton" : "likeButton"} onClick={toggleLike}>{liked ? "Liked!" : "LIKE"}</button>
                 </div>
-            </div>
+            </li>
 
             {/* if descOpen is true, show the expanded info */}
             {descOpen ?
