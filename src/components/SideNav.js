@@ -10,12 +10,11 @@ function SideNav(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.handleLoading(false);
     if (props.count === input ) {
       props.handleCount(10);
-      props.handleLoading();
     } else if (input <= 100 && input > 0) {
       props.handleCount(input);
-      props.handleLoading();
     } else {
       alert("Please put in a value between 0 and 100")
     }

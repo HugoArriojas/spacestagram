@@ -16,8 +16,12 @@ function App() {
     setCount(e)
   }
 
-  const handleLoading = () => {
-    setLoading(!loading)
+  // const handleLoading = () => {
+  //   setLoading(!loading)
+  // }
+
+  const handleLoading = (e) => {
+    setLoading(e)
   }
 
   return (

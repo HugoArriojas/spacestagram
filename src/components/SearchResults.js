@@ -61,7 +61,7 @@ function SearchResults(props) {
     return (
         <>
             <div className="itemContainer"
-                key={props.key}
+                key={props.date}
                 // Making the containers tabbable for accessibility
                 tabIndex={0}
                 onClick={toggleShowDesc}
