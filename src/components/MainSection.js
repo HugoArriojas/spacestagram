@@ -8,7 +8,7 @@ function MainSection(props) {
     const [results, setResults] = useState([])
     // const [loading, setLoading] = useState(false);
 
-    // putting the dependency in a variable so that netlify doesn't read props as a missing dependency
+        // putting the dependency in a variable so that netlify doesn't read props as a missing dependency
     let counts = props.count
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function MainSection(props) {
         responseType: "json",
         params: {
             api_key: "f4vLk18GqZIKNkMJIeF3gtqJeT6j9mtiBsSWjih6",
-            count: `${props.count}`
+            count: counts
         }
         })
         .then((response) => {
