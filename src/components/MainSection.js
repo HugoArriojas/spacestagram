@@ -6,7 +6,8 @@ import SearchResults from "./SearchResults";
 function MainSection(props) {
 
     const [results, setResults] = useState([])
-    const [loading, setLoading] = useState(false);
+
+    const {count} = props.count
 
     useEffect(() => {
         // Calling the API using Axios
@@ -16,18 +17,18 @@ function MainSection(props) {
         responseType: "json",
         params: {
             api_key: "f4vLk18GqZIKNkMJIeF3gtqJeT6j9mtiBsSWjih6",
-            count: `${props.count}`
+            count: count
         }
-        })
+      }
+        )
         .then((response) => {
             // using useState in order to store the received product array
             setResults(response.data)
             // Once API call is received, change useState as "loaded"
             props.handleLoading(true);
-            // setLoading(true)
         })
         // We want API call to be made with every count change
-    }, [props.count])
+    }, [count])
 
     return (
         <section className="productContainers">
