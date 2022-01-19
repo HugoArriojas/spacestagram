@@ -103,6 +103,19 @@
   border: 2px solid #252422;
 }
 
+.expandedDate {
+  background-color: #252422;
+  border-radius: 18px;
+  width: auto;
+  margin: 0 auto;
+  padding: 1%;
+  display: inline-block;
+}
+
+.expandedDay {
+  color: #FFDF90;
+  
+}
 
 .expandedTitle {
   color: #252422;

@@ -85,6 +85,7 @@ function SearchResults(props) {
                     handleClose={toggleShowDesc}
                     handleAddToFavourites={handleAddToFavourites}
                     image={props.hdImage}
+                    date = {props.date}
                     title={props.title}
                     description={props.description}
                 />

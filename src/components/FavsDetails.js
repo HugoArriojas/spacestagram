@@ -16,7 +16,9 @@ function ExtraDetails(props) {
                 </div>
                 <div className="expandedInfo expandedDesc">
                     <div className="itemInfoWrapper">
-                        <p className="itemDate">{props.date}</p>
+                        <div className="expandedDate">
+                            <p className="expandedDay">{props.date}</p>
+                        </div>
                         <h3 className="expandedTitle">{props.title}</h3>
                         <p className="itemDesc">{props.desc}</p>
                     </div>
