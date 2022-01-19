@@ -72,7 +72,7 @@ function SearchResults(props) {
                     <img src={props.image} alt={props.title} />
                 </div>
                 <div className="itemText">
-                    <p className="itemTitle">{props.date}</p>
+                    <p className="itemDate">{props.date}</p>
                     <p className="itemTitle">{props.title}</p>
                     <p className="descNull">{props.description}</p>
                 </div>

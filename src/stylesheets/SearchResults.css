@@ -34,8 +34,8 @@
     .clickedLikeButton,
     .likeButton {
       position: absolute;
-      top: 1px;
-      right: 1px;
+      top: 3px;
+      right: 3px;
       cursor: pointer;
       padding: 10px;
       border-radius: 18px;
@@ -51,7 +51,6 @@
     .clickedLikeButton:hover {
       background-color: #403D39;
       color: #F4A261;
-
     }
 
     .clickedLikeButton {
@@ -83,8 +82,13 @@
     padding: 10px;
   }
   
-  .itemInfo {
-    margin-top: 5%;
+  .itemDate {
+    padding: 2%;
+    background-color: #252422;
+    border-radius: 18px;
+    text-align: center;
+    color: #FFFCF2;
+    margin-bottom: 10px;
   }
 
   .descNull {

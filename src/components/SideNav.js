@@ -5,30 +5,33 @@ import "../stylesheets/SideNav.css"
 
 
 function SideNav(props) {
-  
-  const [input, setInput] = useState("")
-  
+
+  const [input, setInput] = useState()
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (input <= 100 && input > 0) {
+    if (props.count === input ) {
+      props.handleCount(10);
+      props.handleLoading();
+    } else if (input <= 100 && input > 0) {
       props.handleCount(input);
-      props.handleLoading()
+      props.handleLoading();
     } else {
       alert("Please put in a value between 0 and 100")
     }
   }
-  
+
   return (
     <section className="sideNav">
       <div className="navWrapper">
-        <form 
-          action="submit" 
-          onSubmit={handleSubmit}
+        <form
+          action="submit"
           className="countForm"
+          onSubmit={handleSubmit}
         >
           <label htmlFor="count">
-          How many images would you like?
-          (0-100)
+            How many images would you like?
+            (0-100)
           </label>
           <input
             type="text"
@@ -38,9 +41,11 @@ function SideNav(props) {
             className="countInput"
             maxLength={3}
             max={100}
-            />
-          <button type="submit"
-          className="submit btn-slide">Submit</button>
+          />
+          <button
+            type="submit"
+            className="submit btn-slide"
+          >Submit</button>
         </form>
         <h3 className="descriptionExplain">Click on results for desciptions + save to favourites</h3>
       </div> {/* end of sidenav Wrapper */}

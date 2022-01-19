@@ -28,6 +28,7 @@ function App() {
       </header>
       <main>
         <SideNav 
+          count = {count}
           handleCount = {handleCount}
           handleLoading = {handleLoading}
           />

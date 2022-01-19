@@ -23,7 +23,7 @@
   .favouritesNumberBubble {
     position: fixed;
     z-index: 10;
-    top: 0%;
+    top: 2px;
     right: 45px;
     background-color: #FFFCF2;
     border-radius: 50%;
@@ -108,6 +108,7 @@
     display: none;
   }
 
+  .favDetails,
   .favouritesRemove {
     border: none;
     padding: 3%;
@@ -115,11 +116,17 @@
     cursor: pointer;
     border: #252422 1px solid;
   }
-  
+
+  .favDetails:focus,
+  .favDetails:hover,
   .favouritesRemove:focus,
   .favouritesRemove:hover {
     color: #252422;
     background-color: #EB5E28;
+  }
+
+  .favDetails {
+    margin-top: 10px;
   }
 
   favCloseButton {

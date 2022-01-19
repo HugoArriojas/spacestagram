@@ -22,7 +22,6 @@ function MainSection(props) {
         .then((response) => {
             // using useState in order to store the received product array
             setResults(response.data)
-            console.log(response.data)
             // Once API call is received, change useState as "loaded"
             props.handleLoading();
         })
