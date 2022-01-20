@@ -1,3 +1,5 @@
+// Footer bar at the bottom of the screen with links to creator's portfolio, git, and linkedin
+
 import initials from "../assets/initials.png"
 import "../stylesheets/CreditSocials.css"
 

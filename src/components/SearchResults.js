@@ -1,4 +1,4 @@
-// Component to render the items on the page
+// Component to render the APOD results on the page
 import ExtraDetails from "./ExtraDetails";
 import { useState } from 'react';
 import firebase from './firebase';
@@ -9,6 +9,7 @@ function SearchResults(props) {
 
     // Holds the description open state
     const [descOpen, setDescOpen] = useState(false);
+    // Holds if an item on the page has been liked or unliked
     const [liked, setLiked] = useState(false);
 
     // holds the selected item image
@@ -20,7 +21,7 @@ function SearchResults(props) {
     // holds the selected item description
     const [itemDesc, setItemDesc] = useState("")
 
-
+    // function to "Like" the image
     const toggleLike = (e) => {
         // Allows like button to be clicked without opening description
         e.stopPropagation();
@@ -38,14 +39,11 @@ function SearchResults(props) {
         }
     }
 
-
-
     // Handle Add To Favourites function
     const handleAddToFavourites = () => {
         // create a reference to our database
         const database = getDatabase(firebase);
         const dbRef = ref(database);
-
         let favouritesItem = {
             title: itemTitle,
             image: itemImg,
@@ -54,7 +52,6 @@ function SearchResults(props) {
         }
         // push the value of the `selected item` state to the database
         push(dbRef, favouritesItem);
-
     }
 
 
@@ -71,6 +68,7 @@ function SearchResults(props) {
                 <div className="itemImage">
                     <img src={props.image} alt={props.title} />
                 </div>
+                
                 <div className="itemText">
                     <p className="itemDate">{props.date}</p>
                     <p className="itemTitle">{props.title}</p>

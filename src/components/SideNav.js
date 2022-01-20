@@ -1,13 +1,14 @@
-
+// Component for the side Nav
 import { useState } from "react";
 import "../stylesheets/SideNav.css"
 
 
 
 function SideNav(props) {
-
+  // Holds the number put into the "how many images woudl you like"
   const [input, setInput] = useState()
 
+  // Passes the inputted number to the API call in MainSection
   const handleSubmit = (event) => {
     event.preventDefault();
     // props.handleLoading(false);
@@ -29,9 +30,9 @@ function SideNav(props) {
           onSubmit={handleSubmit}
         >
           <label htmlFor="count">
-            How many images would you like?
-            (0-100)
+            How many images would you like? (0-100)
           </label>
+
           <input
             type="text"
             name="count"
@@ -41,18 +42,23 @@ function SideNav(props) {
             maxLength={3}
             max={100}
           />
+
           <button
             type="submit"
             className="submit btn-slide"
-          >Submit</button>
+          > Submit
+          </button>
         </form>
+
         <h3 className="descriptionExplain">Click on results for details + save to favourites</h3>
+
         <div className="repolink">
           <a href="https://github.com/HugoArriojas/spacestagram" className="repoLink">
             <i className="fab fa-github"></i> Repository
           </a>
         </div>
-      </div> {/* end of sidenav Wrapper */}
+
+      </div> {/* /navWrapper */}
     </section>
   );
 }

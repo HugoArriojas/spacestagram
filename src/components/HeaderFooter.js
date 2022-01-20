@@ -1,3 +1,4 @@
+// Header and footer component with the title of Spacestagram
 import "../stylesheets/HeaderFooter.css"
 
 const HeaderFooter = () => {
@@ -9,9 +10,9 @@ const HeaderFooter = () => {
           <h1><span>stagram</span></h1>
         </div>
         <p className="subtitle">Brought to you by NASA's "Astronomy Photo of the Day" API</p>
-      </div>
+      </div> {/* /titleText */}
       <div className="imageTriangle"></div>
-    </div>
+    </div> // /header /footer 
   )
 }
 

@@ -1,4 +1,4 @@
-// Component to render the items on the page
+// Component to render the results on the page, holds SearchResults
 import axios from "axios";
 import { useState, useEffect } from 'react';
 import SearchResults from "./SearchResults";
@@ -6,8 +6,9 @@ import "../stylesheets/MainSection.css"
 
 function MainSection(props) {
 
+  // Holds the results array from the NASA APOD API
   const [results, setResults] = useState([])
-
+  // Holds loading state
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
