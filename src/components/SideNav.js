@@ -11,7 +11,7 @@ function SideNav(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // props.handleLoading(false);
-    if (props.count === input ) {
+    if (props.count === input) {
       props.handleCount(10);
     } else if (input <= 100 && input > 0) {
       props.handleCount(input);
@@ -48,10 +48,9 @@ function SideNav(props) {
         </form>
         <h3 className="descriptionExplain">Click on results for details + save to favourites</h3>
         <div className="repolink">
-
-        <a href="https://github.com/HugoArriojas/spacestagram" className="repoLink">
-          <i className="fab fa-github"></i> Repository
-        </a>
+          <a href="https://github.com/HugoArriojas/spacestagram" className="repoLink">
+            <i className="fab fa-github"></i> Repository
+          </a>
         </div>
       </div> {/* end of sidenav Wrapper */}
     </section>
