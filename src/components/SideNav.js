@@ -33,7 +33,7 @@ function SideNav(props) {
             (0-100)
           </label>
           <input
-            type="number"
+            type="text"
             name="count"
             value={input}
             onChange={(e) => setInput(e.target.value)}

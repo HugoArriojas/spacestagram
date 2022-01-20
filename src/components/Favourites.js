@@ -127,7 +127,7 @@ function Favourites() {
                                                 >
                                                     Remove
                                                 </button>
-                                            </li>
+                                            </li> {/* </favouritesItem> */}
 
                                             {/* if descOpen is true, show the expanded info */}
                                             {favDetailsOpen ?
