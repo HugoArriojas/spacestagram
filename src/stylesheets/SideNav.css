@@ -89,6 +89,8 @@
     padding: 20px 0;
   }
 
+  .repoLink .fab:hover,
+  .repoLink .fab:focus,
   .repoLink:hover,
   .repoLink:focus {
     color: #FFFCF2;
@@ -96,9 +98,25 @@
 
 
   @media screen and (max-height: 590px)  {
-    /* Error handling: if screen is too small vertically, can still scroll through categories, loses sticky property */
+    /* Error handling: if screen is too small vertically, can still scroll through to repo */
     .sideNav {
       overflow: scroll;
     }
+  }
+
+  @media screen and (min-width: 480px)  {
+    /* Error handling: if screen is too small vertically, can still scroll through categories, loses sticky property */
+    
+  .repoLink,
+  .repoLink .fab {
+    padding: 0;
+  }
+  
+  .repoLink .fab {
+    margin-top: 10px;
+
+  }
+
+
   }
   
