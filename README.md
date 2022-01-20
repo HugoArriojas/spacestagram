@@ -7,7 +7,7 @@ From here, users can choose to change the number of results, like (and unlike) t
 
 The Favourites are stored to Firebase, and the saved photos have their corresponding titles, dates, images, and descriptions stored for later viewing.
 
-Check the live link: [Here!](apodspacestagram.netlify.app)
+Check the live link: [Here!](https://apodspacestagram.netlify.app/)
 
 
 *****************************************************************************************************
