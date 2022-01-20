@@ -82,6 +82,18 @@
     margin: 0 auto;
   }
 
+  .repoLink,
+  .repoLink .fab ,
+  .repoLink:visited {
+    color: #EB5E28;
+    padding: 20px 0;
+  }
+
+  .repoLink:hover,
+  .repoLink:focus {
+    color: #FFFCF2;
+  }
+
 
   @media screen and (max-height: 590px)  {
     /* Error handling: if screen is too small vertically, can still scroll through categories, loses sticky property */

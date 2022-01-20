@@ -51,7 +51,7 @@ function Favourites() {
         })
     }, [])
 
-  
+
     // this function takes an argument, which is the ID of the item we want to remove
     const handleRemoveItem = (itemId) => {
         // here we create a reference to the database 
@@ -84,8 +84,8 @@ function Favourites() {
                         <h2 className="yourFavourites">Here are your favourites:</h2>
                         {/* hides absolutely positioned close button when favourites details are open */}
                         {!favDetailsOpen ?
-                        <button className="closeButton" onClick={handleFavourites} aria-label="closePopupWindow">X</button>
-                        : null
+                            <button className="closeButton" onClick={handleFavourites} aria-label="closePopupWindow">X</button>
+                            : null
                         }
                         <ul className="favouritesList">
                             {items.length === 0
@@ -95,7 +95,7 @@ function Favourites() {
                                         <>
                                             <li key={item.key}
                                                 className="favouritesItem"
-                                                >
+                                            >
                                                 <div className="favouritesImage">
                                                     <img src={item.name.image} alt={item.name.title} />
                                                 </div>
@@ -103,25 +103,33 @@ function Favourites() {
                                                     <p className="favouritesTitle">{item.name.title}</p>
                                                     <p className="favouritesDate">{item.name.date}</p>
                                                     <p className="descNull">{item.name.desc}</p>
-                                                    <button className="favDetails" 
+                                                    <button className="favDetails"
                                                         onClick={detailButton}
                                                         // Making the containers tabbable for accessibility
                                                         tabIndex={0}
                                                         // Making it so that the results containers can be selected using the enter key
-                                                        onKeyUp={(e) => { if (e.key === 'Enter') detailButton(e)}}
+                                                        onKeyUp={(e) => { if (e.key === 'Enter') detailButton(e) }}
                                                     >
                                                         More Details
                                                     </button>
+                                                    <button
+                                                        className="favouritesRemove remove1"
+                                                        onClick={() => handleRemoveItem(item.key)}
+                                                        aria-label="Remove this item from favourite"
+                                                    >
+                                                        Remove
+                                                    </button>
                                                 </div>
                                                 <button
-                                                    className="favouritesRemove"
+                                                    className="favouritesRemove remove2"
                                                     onClick={() => handleRemoveItem(item.key)}
+                                                    aria-label="Remove this item from favourite"
                                                 >
                                                     Remove
                                                 </button>
                                             </li>
 
-                                                {/* if descOpen is true, show the expanded info */}
+                                            {/* if descOpen is true, show the expanded info */}
                                             {favDetailsOpen ?
                                                 <FavsDetails
                                                     image={favImage}
@@ -144,7 +152,7 @@ function Favourites() {
                     onClick={handleFavourites}
                 >
                     {/* <i className="fas fa-shopping-cart cart"></i> */}
-                    <p className="favouritesHeart">♥</p>
+                    <p className="favouritesHeart">♥&#xFE0E;</p>
                     {items.length > 0
                         ? <div className="favouritesNumberBubble">
                             <p className="favouritesNumber">{favouritesNumber}</p>

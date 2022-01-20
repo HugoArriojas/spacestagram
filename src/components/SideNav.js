@@ -33,7 +33,7 @@ function SideNav(props) {
             (0-100)
           </label>
           <input
-            type="text"
+            type="number"
             name="count"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -47,10 +47,13 @@ function SideNav(props) {
           >Submit</button>
         </form>
         <h3 className="descriptionExplain">Click on results for details + save to favourites</h3>
-        <a href="https://github.com/HugoArriojas/spacestagram">
-            Repository <i className="fab fa-github"></i>
+        <div className="repolink">
+
+        <a href="https://github.com/HugoArriojas/spacestagram" className="repoLink">
+          <i className="fab fa-github"></i> Repository
         </a>
-      </div> {/* end of sidenav Wrapper */}
+        </div>
+      </div> end of sidenav Wrapper
     </section>
   );
 }
