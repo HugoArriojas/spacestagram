@@ -53,7 +53,7 @@ function SideNav(props) {
           <i className="fab fa-github"></i> Repository
         </a>
         </div>
-      </div> end of sidenav Wrapper
+      </div> {/* end of sidenav Wrapper */}
     </section>
   );
 }
