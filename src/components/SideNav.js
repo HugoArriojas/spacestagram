@@ -47,6 +47,9 @@ function SideNav(props) {
           >Submit</button>
         </form>
         <h3 className="descriptionExplain">Click on results for details + save to favourites</h3>
+        <a href="https://github.com/HugoArriojas/spacestagram">
+            Repository <i className="fab fa-github"></i>
+        </a>
       </div> {/* end of sidenav Wrapper */}
     </section>
   );

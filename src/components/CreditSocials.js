@@ -11,7 +11,7 @@ function CreditSocials() {
             <img src={initials} alt="Website creator's initials, HA" className="initials" />
           </a>
 
-          <a href="https://github.com/HugoArriojas/spacestagram">
+          <a href="https://github.com/HugoArriojas/">
             <i className="fab fa-github"></i>
           </a>
 
